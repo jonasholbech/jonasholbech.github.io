@@ -24,8 +24,16 @@ var DOM = {
     setData:function(rows){
         this.rows=rows;
     },
+    getContainer:function(){
+        return document.querySelector("section.projects"); 
+    },
+    getTemplate:function(){
+        return document.querySelector("article.item"); 
+    },
     display:function(){
-        var d = document.querySelector("h1").innerHTML=this.rows[0].gsx$header.$t;
+        var container = this.getCotainer();
+        var template = this.getTemplate();
+        
        
     }
 }
