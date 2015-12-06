@@ -36,6 +36,7 @@ var DOM = {
         for(var i=0; i<this.rows.length; i++){
             var c = template.cloneNode()
             container.appendChild(c);
+            console.log(c)
         }
     }
 }
