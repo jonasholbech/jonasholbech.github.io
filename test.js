@@ -38,6 +38,7 @@ var DOM = {
             c.firstElementChild.innerHTML=this.rows[i].gsx$header.$t;
             c.firstElementChild.nextElementSibling.innerHTML=this.rows[i].gsx$price.$t;
             c.firstElementChild.nextElementSibling.nextElementSibling.innerHTML=this.rows[i].gsx$body.$t;
+            c.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.setAttribute('src',this.rows[i].gsx$img.$t);
             container.appendChild(c);
             //console.log(c, c.firstElementChild)
         }
