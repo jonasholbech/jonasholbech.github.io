@@ -11,11 +11,22 @@ var Ajax = {
         };
         xobj.send(null);  
     },
-    log:function(data){
+    dataReceived:function(data){
         var j = JSON.parse(data)
         var rows = j.feed.entry;
-        var d = document.querySelector("h1").innerHTML=rows[0].gsx$header.$t;
-        console.log(rows[0].gsx$header.$t)
+        
+        DOM.setData(rows);
+        DOM.display();
     }
 }
-Ajax.getJSON('https://spreadsheets.google.com/feeds/list/1POwYekndHckpMTTbPQccqtJhvQ3pgjPTjaLhDfumr9Y/od6/public/values?alt=json', Ajax.log)
+var DOM = {
+    rows:null,
+    setData:function(rows){
+        this.rows=rows;
+    },
+    display:function(){
+        var d = document.querySelector("h1").innerHTML=this.rows[0].gsx$header.$t;
+       
+    }
+}
+Ajax.getJSON('https://spreadsheets.google.com/feeds/list/1POwYekndHckpMTTbPQccqtJhvQ3pgjPTjaLhDfumr9Y/od6/public/values?alt=json', Ajax.dataReceived)
