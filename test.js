@@ -31,7 +31,7 @@ var DOM = {
         return document.querySelector("article.item"); 
     },
     display:function(){
-        var container = this.getCotainer();
+        var container = this.getContainer();
         var template = this.getTemplate();
         
        
