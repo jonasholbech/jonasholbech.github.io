@@ -40,6 +40,7 @@ var DOM = {
             container.appendChild(c);
             //console.log(c, c.firstElementChild)
         }
+        container.removeChild(template);
     }
 }
 Ajax.getJSON('https://spreadsheets.google.com/feeds/list/1POwYekndHckpMTTbPQccqtJhvQ3pgjPTjaLhDfumr9Y/od6/public/values?alt=json', Ajax.dataReceived)
