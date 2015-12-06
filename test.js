@@ -4,7 +4,6 @@ var Ajax = {
         xobj.overrideMimeType("application/json");
         xobj.open('GET', path, true);
         xobj.onreadystatechange = function () {
-            //console.log(xobj)
             if (xobj.readyState == 4 && xobj.status == "200") {
                 callback(xobj.responseText);
             }
@@ -14,7 +13,6 @@ var Ajax = {
     dataReceived:function(data){
         var j = JSON.parse(data)
         var rows = j.feed.entry;
-        
         DOM.setData(rows);
         DOM.display();
     }
@@ -40,9 +38,9 @@ var DOM = {
             c.firstElementChild.nextElementSibling.nextElementSibling.innerHTML=this.rows[i].gsx$body.$t;
             c.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.setAttribute('src',this.rows[i].gsx$img.$t);
             container.appendChild(c);
-            //console.log(c, c.firstElementChild)
         }
         container.removeChild(template);
     }
 }
+
 Ajax.getJSON('https://spreadsheets.google.com/feeds/list/1POwYekndHckpMTTbPQccqtJhvQ3pgjPTjaLhDfumr9Y/od6/public/values?alt=json', Ajax.dataReceived)
