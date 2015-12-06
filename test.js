@@ -37,7 +37,7 @@ var DOM = {
             var c = template.cloneNode(true)
             c.firstChild.innerHTML=this.rows[i].gsx$header;
             container.appendChild(c);
-            //console.log(c)
+            console.log(c, c.firstChild)
         }
     }
 }
