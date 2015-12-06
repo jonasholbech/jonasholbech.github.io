@@ -35,7 +35,7 @@ var DOM = {
         var template = this.getTemplate();
         for(var i=0; i<this.rows.length; i++){
             var c = template.cloneNode(true)
-            c.firstElementChild.innerHTML=this.rows[i].gsx$header;
+            c.firstElementChild.innerHTML=this.rows[i].gsx$header.$t;
             container.appendChild(c);
             console.log(c, c.firstElementChild)
         }
