@@ -34,7 +34,7 @@ var DOM = {
         var container = this.getContainer();
         var template = this.getTemplate();
         for(var i=0; i<this.rows.length; i++){
-            var c = template.cloneNode()
+            var c = template.cloneNode(true)
             container.appendChild(c);
             console.log(c)
         }
