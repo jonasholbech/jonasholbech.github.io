@@ -2,7 +2,7 @@
 var url = "https://spreadsheets.google.com/feeds/list/1POwYekndHckpMTTbPQccqtJhvQ3pgjPTjaLhDfumr9Y/od6/public/values?alt=json";
 
 $.getJSON(url, function(data) {
-
+    console.log(data)
     var entry = data.feed.entry;
 
     $(entry).each(function(){
