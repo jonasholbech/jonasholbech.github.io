@@ -6,8 +6,8 @@ $.getJSON(url, function(data) {
     var entry = data.feed.entry;
 
     $(entry).each(function(){
-        // Column names are name, age, etc.
-        //$('section.projects').prepend('<h2>'+this.gsx$name.$t+'</h2><p>'+this.gsx$age.$t+'</p>');
+        // Column names are the first column in the spreadsheet.
+        //if the column title is "age" we reference it's content with this.gsx$age.$t
         $('section.projects').prepend('<article class="item"><h1>'+this.gsx$header.$t+'</h1><span>'+this.gsx$price.$t+'</span><p>'+this.gsx$body.$t+'</p><img src="'+this.gsx$img.$t+'" alt=""></article>');
     });
 
