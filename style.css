@@ -3,3 +3,6 @@ section.projects {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+body {
+    background-color:cornsilk;
+}
